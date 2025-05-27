@@ -29,8 +29,10 @@ Use responsibly and only when truly necessary.
 
 ## 📁 Project Structure
 devtools-blocking-demo/
-├── index.html     # Main HTML page
-├── style.css      # Basic styling
-├── script.js      # DevTools detection logic
-└── favicon.ico    # Favicon for the website
+| File/Folder   | Description                            |
+| ------------- | -------------------------------------- |
+| `index.html`  | 🖥️ Main HTML structure of the website |
+| `style.css`   | 🎨 Basic styling and layout            |
+| `script.js`   | 🧠 DevTools detection logic            |
+| `favicon.ico` | 🌐 Website icon (favicon)              |
 
