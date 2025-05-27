@@ -28,3 +28,9 @@ These methods are **not foolproof** and can be bypassed by experienced users. Th
 Use responsibly and only when truly necessary.
 
 ## 📁 Project Structure
+/devtools-blocking-demo
+│
+├── index.html       # Main HTML page
+├── style.css        # Basic styling
+├── script.js        # DevTools detection logic
+└── favicon.ico      # Favicon for the website
