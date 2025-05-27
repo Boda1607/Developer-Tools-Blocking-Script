@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Tools Blocking Demo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+<body>
+  <header>
+    <h1>🔐 Developer Tools Blocking Script Demo</h1>
+    <p>This page demonstrates how some websites attempt to block access to browser developer tools.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>💻 What Does This Script Do?</h2>
+      <p>This script blocks:</p>
+      <ul>
+        <li>Right-click (context menu)</li>
+        <li>Keyboard shortcuts: F12, Ctrl+Shift+I/J, Ctrl+U</li>
+        <li>Access to DevTools via console or window dimension changes</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>⚠️ Disadvantages of Using This Approach</h2>
+      <ul>
+        <li>It can annoy users by blocking normal browser functionality.</li>
+        <li>May interfere with accessibility tools or extensions.</li>
+        <li>Not foolproof – experienced users can easily bypass it.</li>
+        <li>Redirecting users to a blank page without explanation can damage trust.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📜 The JavaScript Code</h2>
+      <pre><code>
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function (e) {
+    if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+        (e.ctrlKey && e.key === 'U')
+    ) {
+        e.preventDefault();
+        alert("Developer tools detected! Closing the page.");
+        redirectToBlank();
+    }
+});
+
+function redirectToBlank() {
+    window.location.replace("about:blank");
+}
+
+(function detectDevTools() {
+    let devtoolsOpen = false;
+
+    function checkWindowSize() {
+        const threshold = 160;
+        if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
+            devtoolsOpen = true;
+        }
+    }
+
+    function checkConsoleBehavior() {
+        const element = new Image();
+        Object.defineProperty(element, 'id', {
+            get: function () {
+                devtoolsOpen = true;
+                alert("Developer tools detected! Closing the page.");
+                redirectToBlank();
+            }
+        });
+        console.log(element);
+    }
+
+    function monitorDevTools() {
+        devtoolsOpen = false;
+        checkWindowSize();
+        if (devtoolsOpen) {
+            alert("Developer tools detected! Closing the page.");
+            redirectToBlank();
+        } else {
+            checkConsoleBehavior();
+        }
+    }
+
+    setInterval(monitorDevTools, 100);
+})();
+      </code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ by <a href="https://abdelrahmanz.netlify.app/" target="_blank">AbdElRahman</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
