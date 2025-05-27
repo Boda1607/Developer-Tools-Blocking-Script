@@ -8,7 +8,7 @@ This project demonstrates how JavaScript can be used to detect and block access 
 - Developer tools via window size or console object detection
 
 ## 🚀 Live Demo
-Check out the live demo here: [https://yourusername.github.io/devtools-blocking-demo](https://yourusername.github.io/devtools-blocking-demo)
+Check out the live demo here: [https://developertoolsblockingscript.netlify.app/](https://developertoolsblockingscript.netlify.app/)
 
 ## 📜 Features
 - 🚫Prevents context menu (right-click)
