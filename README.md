@@ -28,7 +28,7 @@ These methods are **not foolproof** and can be bypassed by experienced users. Th
 Use responsibly and only when truly necessary.
 
 ## 📁 Project Structure
-devtools-blocking-demo/
+
 | File/Folder   | Description                            |
 | ------------- | -------------------------------------- |
 | `index.html`  | 🖥️ Main HTML structure of the website |
