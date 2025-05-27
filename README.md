@@ -11,12 +11,12 @@ This project demonstrates how JavaScript can be used to detect and block access 
 Check out the live demo here: [https://yourusername.github.io/devtools-blocking-demo](https://yourusername.github.io/devtools-blocking-demo)
 
 ## 📜 Features
-- Prevents context menu (right-click)
-- Blocks access via keyboard shortcuts
-- Detects dev tools using:
+- 🚫Prevents context menu (right-click)
+- 🛑Blocks access via keyboard shortcuts
+- 🕵️‍♂️Detects dev tools using:
   - `console.log` behavior
   - `window.innerWidth` vs `outerWidth` differences
-- Redirects users to a blank page if dev tools are detected
+- 🚨Redirects users to a blank page if dev tools are detected
 
 ## ⚠️ Important Note
 These methods are **not foolproof** and can be bypassed by experienced users. They may also:
